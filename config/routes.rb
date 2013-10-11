@@ -1,8 +1,13 @@
 RuotePrototype::Application.routes.draw do
 
-  # routes to RuoteKit
-  get '/_ruote' => RuoteKit::Application
-  get '/_ruote/*path' => RuoteKit::Application
+    root 'sessions#index'
+
+    resources :sessions, only: [:index, :create, :destroy]
+    resources :issues
+
+    # routes to RuoteKit
+    get '/_ruote' => RuoteKit::Application
+    get '/_ruote/*path' => RuoteKit::Application
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
