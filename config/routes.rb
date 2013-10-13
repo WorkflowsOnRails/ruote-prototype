@@ -1,8 +1,7 @@
 RuotePrototype::Application.routes.draw do
 
-    root 'sessions#index'
+    root 'issues#index'
 
-    resources :sessions, only: [:index, :create, :destroy]
     resources :issues
 
     # routes to RuoteKit
