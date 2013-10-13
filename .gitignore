@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# ignore application tempfiles
+/db/development.sqlite3
+/db/test.sqlite3
+/ruote_work_development/*
+
