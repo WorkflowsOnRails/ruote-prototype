@@ -13,7 +13,7 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
-/tmp
+/tmp/*
 
 # ignore application tempfiles
 /db/development.sqlite3
