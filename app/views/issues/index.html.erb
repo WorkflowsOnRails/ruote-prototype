@@ -1,1 +1,6 @@
-<p>Issues INDEX: TODO</p>
+<%= form_for :issue, url: issues_path do |i| %>
+  <p><%= i.label :name %><br>
+    <%= i.text_field :name %></p>
+
+  <p><%= i.submit %></p>
+<% end %>
