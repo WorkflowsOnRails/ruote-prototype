@@ -1,19 +1,30 @@
 class IssuesController < ApplicationController
 
     def index
-        # display the view that shows the input fields required to create an issue
+        # display the login screen if not logged in, the default view for user role if logged in
     end
 
-    def create
-        #create the issue
-        #start the work participants for the current issue
-            #note sure what they will be actually doing though...
 
-        render text: 'BLAH'
+
+
+    #look up the tutorial for how rails does these specific calls to create something
+
+
+
+
+    def claim
+        #check that role is developer
+        #set that developer to be the user who claied this issue
     end
 
-    def destroy
-        #close the issue
+
+    def sign_off
+        #check that role is Project Manager
+        #set that developer to be the user who signed off this issue
     end
+
+
+
+
 
 end

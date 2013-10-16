@@ -8,6 +8,11 @@ RuotePrototype::Application.routes.draw do
     get '/_ruote' => RuoteKit::Application
     get '/_ruote/*path' => RuoteKit::Application
 
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
