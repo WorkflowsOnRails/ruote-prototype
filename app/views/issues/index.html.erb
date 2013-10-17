@@ -1,7 +1,11 @@
 
-<p>TODO: login screen</p>
+<% if user_signed_in? -%>
+  <p>signed in</p>
+<% end -%>
 
-
+<% if !user_signed_in? -%>
+  <p>not signed in</p>
+<% end -%>
 
 
 

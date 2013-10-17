@@ -1,27 +1,33 @@
 class IssuesController < ApplicationController
+  #before_action :authentiate_user!
 
-    def index
-        # display the login screen if not logged in, the default view for user role if logged in
+  def index
+    #TODO:
+
+    if !user_signed_in?
+      redirect_to new_user_session_path
     end
 
 
-
-
-    #look up the tutorial for how rails does these specific calls to create something
+  end
 
 
 
 
-    def claim
-        #check that role is developer
-        #set that developer to be the user who claied this issue
-    end
+  #look up the tutorial for how rails does these specific calls to create something
 
 
-    def sign_off
-        #check that role is Project Manager
-        #set that developer to be the user who signed off this issue
-    end
+
+
+  def claim
+    #check that role is developer
+    #set that developer to be the user who claied this issue
+  end
+
+  def sign_off
+    #check that role is Project Manager
+    #set that developer to be the user who signed off this issue
+  end
 
 
 
