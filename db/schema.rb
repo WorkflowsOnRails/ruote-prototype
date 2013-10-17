@@ -22,19 +22,20 @@ ActiveRecord::Schema.define(version: 20131016004536) do
   end
 
   create_table "issues", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "creator_id"
+    t.integer  "developer_id"
+    t.integer  "project_manager_id"
     t.string   "title"
     t.text     "description"
     t.date     "deployment_date"
+    t.boolean  "claimed"
     t.boolean  "signed_off"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "roles", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "name"
   end
 
   create_table "users", force: true do |t|
