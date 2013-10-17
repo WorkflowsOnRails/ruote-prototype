@@ -44,5 +44,11 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+#Set up Ruote and Ruote-kit
 gem "ruote", git: "https://github.com/jmettraux/ruote.git"
 gem "ruote-kit", git: "https://github.com/kennethkalmer/ruote-kit.git"
+
+#Get Devise for authentication services
+gem 'devise'
+
+
