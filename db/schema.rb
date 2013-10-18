@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131017030217) do
+ActiveRecord::Schema.define(version: 20131018191242) do
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -22,13 +22,10 @@ ActiveRecord::Schema.define(version: 20131017030217) do
   end
 
   create_table "issues", force: true do |t|
-    t.integer  "creator_id"
-    t.integer  "developer_id"
-    t.integer  "project_manager_id"
     t.string   "title"
     t.text     "description"
+    t.integer  "developer_id"
     t.date     "deployment_date"
-    t.boolean  "claimed"
     t.boolean  "signed_off"
     t.datetime "created_at"
     t.datetime "updated_at"

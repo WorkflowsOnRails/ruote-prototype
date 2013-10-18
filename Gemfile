@@ -51,4 +51,12 @@ gem "ruote-kit", git: "https://github.com/kennethkalmer/ruote-kit.git"
 #Get Devise for authentication services
 gem 'devise'
 
+#get simple_form
+gem 'simple_form'
+
+
+
+
+
+
 
