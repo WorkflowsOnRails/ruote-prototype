@@ -9,7 +9,12 @@ class IssuesController < ApplicationController
   def view
 
     pdef = Ruote.process_definition do
-      create_issue
+      concurrence do
+        create_issue
+        claim_issue
+        sign_issue
+        close_issue
+      end
     end
 
     RuoteKit.engine.launch(pdef)

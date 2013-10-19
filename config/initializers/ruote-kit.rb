@@ -33,7 +33,10 @@ RuoteKit.engine = Ruote::Engine.new(Ruote::Worker.new(RUOTE_STORAGE))
 unless $RAKE_TASK # don't register participants in rake tasks
   RuoteKit.engine.register do
 
-    participant 'create_issue', CreateIssueParticipant
+    participant 'create_issue', CreateIssue
+    participant 'claim_issue', ClaimIssue
+    participant 'sign_issue', SignIssue
+    participant 'close_issue', CloseIssue
 
     catchall
   end

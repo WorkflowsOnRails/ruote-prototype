@@ -1,9 +1,9 @@
-class CreateIssueParticipant
+class ClaimIssue
 
   include Ruote::LocalParticipant
 
   def on_workitem
-    puts "CREATEISSUEWORKER IS WORKING"
+    puts "ClaimIssue is working"
     reply #needed to signal Ruote that work is done
   end
 
