@@ -32,12 +32,9 @@ RuoteKit.engine = Ruote::Engine.new(Ruote::Worker.new(RUOTE_STORAGE))
 
 unless $RAKE_TASK # don't register participants in rake tasks
   RuoteKit.engine.register do
-    # register your own participants using the participant method
-    #
-    # Example: participant 'alice', Ruote::StorageParticipant see
-    # http://ruote.rubyforge.org/participants.html for more info
 
-    # register the catchall storage participant named '.+'
+    participant 'create_issue', CreateIssueParticipant
+
     catchall
   end
 end

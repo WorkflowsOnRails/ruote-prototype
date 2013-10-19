@@ -17,4 +17,5 @@
 
 # ignore application tempfiles
 /ruote_work_development/*
+/ruote_work/*
 

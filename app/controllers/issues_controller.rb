@@ -1,5 +1,5 @@
 class IssuesController < ApplicationController
-  #before_action :authentiate_user!
+
 
   def login
     #Hack because I cant seem to access the Devise controller in routes.rb
@@ -7,6 +7,12 @@ class IssuesController < ApplicationController
   end
 
   def view
+
+    pdef = Ruote.process_definition do
+      create_issue
+    end
+
+    RuoteKit.engine.launch(pdef)
 
   end
 
