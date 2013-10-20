@@ -1,4 +1,25 @@
-<p><%= @issue.title %></p>
-<p><%= @issue.description %></p>
 
-<%= link_to "Return", issues_path %>
+
+<p>Title: <%= @issue.title %></p>
+<p>Description: <%= @issue.description %></p>
+<p>Developer: <%= @issue.developer_id %></p>
+<p>Reporter: <%= @issue.reporter_id %></p>
+<p>Deployment Date: <%= @issue.deployment_date %></p>
+<p>Signed Off: <%= @issue.signed_off %></p>
+
+<div>
+  <%= button_to "Index", {controller: :issues, action: :index}, method: :get %>
+
+  <% if current_user.role.name == "reporter" %>
+    <%= button_to "Delete", {controller: :issues, action: :destroy, id: @issue.id}, method: :delete %>
+  <% end %>
+
+  <% if current_user.role.name == "developer" %>
+    <%= button_to "Claim", {controller: :issues, action: :claim, id: @issue}, method: :post %>
+  <% end %>
+
+  <% if current_user.role.name == "manager" %>
+    <%= button_to "Sign Off", {controller: :issues, action: :sign_off, id: @issue}, method: :post %>
+  <% end %>
+
+</div>

@@ -19,7 +19,14 @@ RuotePrototype::Application.routes.draw do
     root to: "issues#login", as: 'login_root'
   end
 
-  resources :issues
+  resources :issues, only: [:index, :new, :create, :show, :destroy] do
+    
+    member do
+      post 'claim'
+      post 'sign_off'
+    end
+
+  end
 
   # routes to RuoteKit
   get '/_ruote' => RuoteKit::Application

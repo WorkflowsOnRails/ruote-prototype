@@ -6,9 +6,10 @@
     <%= f.input :description, required: true %>
   </div>
 
+<div>
   <div class="form-actions">
     <%= f.button :submit, "Submit" %>
-    <%= link_to "Cancel", issues_path %>
   </div>
-
 <% end %>
+  <%= button_to "Cancel", {controller: :issues, action: :index,}, method: :get %>
+</div>

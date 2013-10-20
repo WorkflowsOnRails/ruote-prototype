@@ -5,5 +5,5 @@
 </div>
 
 <div>
-  <%= button_to "Create", new_issue_path, method: :get %>
+  <%= button_to "Create", {controller: :issues, action: :new,}, method: :get %>
 </div>
