@@ -4,15 +4,15 @@ RuotePrototype::Application.routes.draw do
 
 
   authenticated :user, lambda { |u| u.role.name == 'developer' } do
-    root to: "issues#view", as: 'developer_root'
+    root to: "issues#index", as: 'developer_root'
   end
 
-  authenticated :user, lambda { |u| u.role.name == 'project_manager' } do
-    root to: "issues#view", as: 'project_manager_root'
+  authenticated :user, lambda { |u| u.role.name == 'manager' } do
+    root to: "issues#index", as: 'project_manager_root'
   end
 
   authenticated :user, lambda { |u| u.role.name == 'reporter' } do
-    root to: "issues#view", as: 'reported_root'
+    root to: "issues#index", as: 'reported_root'
   end
 
   devise_scope :user do

@@ -4,6 +4,7 @@ class CreateIssues < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.references :developer
+      t.references :reporter
       t.date :deployment_date
       t.boolean :signed_off
       t.timestamps

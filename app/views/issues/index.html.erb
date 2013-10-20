@@ -1,0 +1,9 @@
+<div>
+  <% @issues.each do |issue| %>
+    <p><%= link_to issue.id, issue_path(id: issue.id) %> <%= issue.title %></p>
+  <% end %>
+</div>
+
+<div>
+  <%= button_to "Create", new_issue_path, method: :get %>
+</div>

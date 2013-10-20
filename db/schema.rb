@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20131018191242) do
     t.string   "title"
     t.text     "description"
     t.integer  "developer_id"
+    t.integer  "reporter_id"
     t.date     "deployment_date"
     t.boolean  "signed_off"
     t.datetime "created_at"
