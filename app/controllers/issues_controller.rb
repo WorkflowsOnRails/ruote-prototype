@@ -8,6 +8,14 @@ class IssuesController < ApplicationController
   #show a list of issues
   def index
     @issues = Issue.all
+
+    #kill all ruote processes
+    @temp = RuoteKit.engine.processes
+    @temp.each do |p|
+      RuoteKit.engine.cancel_process(p.wfid)
+    end
+
+
   end
 
   def new
@@ -21,6 +29,15 @@ class IssuesController < ApplicationController
     @issue = Issue.new(issue_params)
     @issue.reporter_id = current_user.id
     @issue.save
+
+    #set up process definition
+    pdef = Ruote.process_definition do
+      create_issue
+      close_issue
+    end
+
+    #start the process, pass @issue as workitem
+    RuoteKit.engine.launch(pdef, @issue)
 
     redirect_to @issue
   end

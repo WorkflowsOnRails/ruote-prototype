@@ -4,6 +4,16 @@ class CloseIssue
 
   def on_workitem
     puts "CloseIssue is working"
+
+    puts workitem.fields
+    puts workitem.lookup('id')
+
+    issue = Issue.find(workitem.lookup('id'))
+    issue.developer_id = 100
+
+    issue.save
+
+
     reply #needed to signal Ruote that work is done
   end
 

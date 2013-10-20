@@ -4,6 +4,7 @@ class CreateIssue
 
   def on_workitem
     puts "CreateIssue is working"
+
     reply #needed to signal Ruote that work is done
   end
 
